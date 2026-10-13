@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bluecompile.com/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://bluecompile.co.il/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bluecompile.com/"/>
+  </url>
+  <url>
+    <loc>https://bluecompile.com/accessibility.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://bluecompile.co.il/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bluecompile.com/accessibility.html"/>
+  </url>
+  <url>
+    <loc>https://bluecompile.com/privacy.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://bluecompile.co.il/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bluecompile.com/privacy.html"/>
+  </url>
+</urlset>
