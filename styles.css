@@ -131,6 +131,9 @@ details p{margin-top:12px;color:var(--muted)}
 .form .btn{align-self:flex-start}
 .status{background:#16244A;color:#fff;border-radius:10px;padding:14px 16px}
 .status:empty{display:none}
+.status.is-error{background:#3A1622}
+.hp{display:none}
+.form .btn:disabled{opacity:.6;cursor:wait}
 .form .check>span{flex:1}
 
 /* footer */
