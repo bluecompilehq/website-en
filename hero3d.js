@@ -46,11 +46,35 @@
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (en) {
       visible = en[0].isIntersecting;
-      if (visible && !raf && !reduce) raf = requestAnimationFrame(frame);
+      if (visible && !raf && !paused) raf = requestAnimationFrame(frame);
     }).observe(cv);
   }
 
   var rx = 0, ry = 0, t0 = performance.now(), raf = 0;
+  // Pause control (WCAG 2.2.2). Starts paused when the visitor prefers reduced motion.
+  var paused = reduce, pausedTotal = 0, pauseStart = performance.now();
+  var btn = document.getElementById('animToggle');
+  function syncBtn() {
+    if (!btn) return;
+    btn.textContent = paused ? btn.getAttribute('data-play') : btn.getAttribute('data-pause');
+    btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+  }
+  if (btn) {
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      if (paused) {
+        pausedTotal += performance.now() - pauseStart;
+        paused = false;
+        if (!raf && visible) raf = requestAnimationFrame(frame);
+      } else {
+        paused = true;
+        pauseStart = performance.now();
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      }
+      syncBtn();
+    });
+    syncBtn();
+  }
   var proj = new Array(pts.length);
 
   function frame(now) {
@@ -68,13 +92,13 @@
     var cx = wide ? w * (rtl ? 0.3 : 0.7) : w * 0.5;
     var cy = wide ? h * 0.52 : h * 0.62;
     var scale = Math.min(wide ? w * 0.13 : w * 0.3, h * 0.2);
-    ctx.globalAlpha = wide ? 1 : 0.28;
+    ctx.globalAlpha = wide ? 1 : 0.2;
     var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, scale * 2.6);
     g.addColorStop(0, 'rgba(47,91,255,0.28)');
     g.addColorStop(1, 'rgba(47,91,255,0)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
 
-    var t = (now - t0) / 1000;
+    var t = (now - t0 - pausedTotal) / 1000;
     var tY = t * 0.32 + mouse.x * 0.9;
     var tX = 0.55 + Math.sin(t * 0.21) * 0.25 + mouse.y * 0.6;
     ry += (tY - ry) * 0.06; rx += (tX - rx) * 0.06;
@@ -104,7 +128,7 @@
         ctx.beginPath(); ctx.arc(q.sx, q.sy, (1.2 + depth * 2.4) * q.s, 0, Math.PI * 2); ctx.fill();
       }
     }
-    if (!reduce && visible) raf = requestAnimationFrame(frame);
+    if (!paused && visible) raf = requestAnimationFrame(frame);
   }
   raf = requestAnimationFrame(frame);
 })();

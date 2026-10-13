@@ -19,11 +19,11 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<section id="top" class="hero">
+<header id="top" class="hero">
   <canvas id="hero3d" aria-hidden="true"></canvas>
   <div class="hero-inner">
-    <header class="nav wrap">
-      <a href="#top" class="logo"><span class="logo-mark">&lt;/&gt;</span><span class="logo-text">Blue<span>Compile</span></span></a>
+    <div class="nav wrap">
+      <a href="#top" class="logo" aria-label="Blue Compile – back to top"><span class="logo-mark" aria-hidden="true">&lt;/&gt;</span><span class="logo-text">Blue<span>Compile</span></span></a>
       <nav aria-label="Main navigation" class="nav-links">
         <a href="#services">Services</a>
         <a href="#process">How we work</a>
@@ -31,14 +31,14 @@
         <a href="https://bluecompile.co.il/" lang="he" hreflang="he">עברית</a>
       </nav>
       <a href="#contact" class="btn btn-ghost btn-sm">Let's talk</a>
-    </header>
+    </div>
     <div class="wrap hero-body">
       <div class="hero-copy">
-        <div class="eyebrow">$ compile --idea=yours --output=software</div>
+        <div class="eyebrow" aria-hidden="true">$ compile --idea=yours --output=software</div>
         <h1>Software that<br>works for<br><span class="hl">your business.</span></h1>
         <p class="lead">Custom websites, apps and business systems – from the first spec to launch and beyond. Clean code, clear timelines, and direct communication with the people writing your code.</p>
         <div class="ctas">
-          <a href="#contact" class="btn btn-primary">Start a project →</a>
+          <a href="#contact" class="btn btn-primary">Start a project <span aria-hidden="true">→</span></a>
           <a href="#process" class="btn btn-ghost">See how we work</a>
         </div>
         <div class="stats">
@@ -48,14 +48,15 @@
         </div>
       </div>
     </div>
+    <button type="button" class="anim-toggle" id="animToggle" data-pause="Pause animation" data-play="Play animation" hidden>Pause animation</button>
   </div>
-</section>
+</header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
 <section aria-label="Technologies" class="strip">
   <div class="wrap strip-inner">
-    <span>React</span><i>◆</i><span>Next.js</span><i>◆</i><span>TypeScript</span><i>◆</i><span>Node.js</span><i>◆</i><span>React Native</span><i>◆</i><span>Python</span><i>◆</i><span>PostgreSQL</span><i>◆</i><span>AWS</span><i>◆</i><span>AI / LLM</span>
+    <span>React</span><i aria-hidden="true">◆</i><span>Next.js</span><i aria-hidden="true">◆</i><span>TypeScript</span><i aria-hidden="true">◆</i><span>Node.js</span><i aria-hidden="true">◆</i><span>React Native</span><i aria-hidden="true">◆</i><span>Python</span><i aria-hidden="true">◆</i><span>PostgreSQL</span><i aria-hidden="true">◆</i><span>AWS</span><i aria-hidden="true">◆</i><span>AI / LLM</span>
   </div>
 </section>
 
@@ -63,12 +64,12 @@
   <h2>What we build</h2>
   <p class="sub">One end-to-end partner – discovery, design, development and maintenance – with no juggling between vendors.</p>
   <div class="grid grid-cards">
-    <article class="card"><div class="num">01</div><h3>Business websites &amp; landing pages</h3><p>Fast, mobile-first sites built to convert – that present your business exactly as it is.</p><div class="tags"><span>Next.js</span><span>SEO</span><span>CMS</span></div></article>
-    <article class="card"><div class="num">02</div><h3>Web apps &amp; SaaS</h3><p>Browser-based products with users, permissions, payments and dashboards.</p><div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div></article>
-    <article class="card"><div class="num">03</div><h3>Mobile apps</h3><p>One app for iOS and Android, from design all the way to the app stores.</p><div class="tags"><span>React Native</span><span>PWA</span></div></article>
-    <article class="card"><div class="num">04</div><h3>Internal systems</h3><p>CRM, orders, inventory or customer management – built around how your team actually works.</p><div class="tags"><span>Admin</span><span>Dashboards</span></div></article>
-    <article class="card"><div class="num">05</div><h3>Automations &amp; integrations</h3><p>Connect the tools you already use – payments, invoicing, email, WhatsApp and more.</p><div class="tags"><span>API</span><span>Webhooks</span></div></article>
-    <article class="card"><div class="num">06</div><h3>AI for your business</h3><p>Chatbots, smart agents and document processing that fit into your day-to-day work.</p><div class="tags"><span>LLM</span><span>Agents</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">01</div><h3>Business websites &amp; landing pages</h3><p>Fast, mobile-first sites built to convert – that present your business exactly as it is.</p><div class="tags"><span>Next.js</span><span>SEO</span><span>CMS</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">02</div><h3>Web apps &amp; SaaS</h3><p>Browser-based products with users, permissions, payments and dashboards.</p><div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">03</div><h3>Mobile apps</h3><p>One app for iOS and Android, from design all the way to the app stores.</p><div class="tags"><span>React Native</span><span>PWA</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">04</div><h3>Internal systems</h3><p>CRM, orders, inventory or customer management – built around how your team actually works.</p><div class="tags"><span>Admin</span><span>Dashboards</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">05</div><h3>Automations &amp; integrations</h3><p>Connect the tools you already use – payments, invoicing, email, WhatsApp and more.</p><div class="tags"><span>API</span><span>Webhooks</span></div></article>
+    <article class="card"><div class="num" aria-hidden="true">06</div><h3>AI for your business</h3><p>Chatbots, smart agents and document processing that fit into your day-to-day work.</p><div class="tags"><span>LLM</span><span>Agents</span></div></article>
   </div>
 </section>
 
@@ -87,10 +88,10 @@
 <section id="process" class="wrap section">
   <h2>How it works</h2>
   <ol class="grid grid-4 steps">
-    <li><div class="big">01</div><h3>Intro call</h3><p>We learn your business, goals and budget – and decide together if we're a fit.</p></li>
-    <li><div class="big">02</div><h3>Spec &amp; design</h3><p>A clear spec, screen flow and UI/UX design, approved before the first line of code.</p></li>
-    <li><div class="big">03</div><h3>Build &amp; test</h3><p>Short sprints with a live preview and regular updates along the way.</p></li>
-    <li><div class="big">04</div><h3>Launch &amp; support</h3><p>Go-live, training, monitoring and ongoing support as you need it.</p></li>
+    <li><div class="big" aria-hidden="true">01</div><h3>Intro call</h3><p>We learn your business, goals and budget – and decide together if we're a fit.</p></li>
+    <li><div class="big" aria-hidden="true">02</div><h3>Spec &amp; design</h3><p>A clear spec, screen flow and UI/UX design, approved before the first line of code.</p></li>
+    <li><div class="big" aria-hidden="true">03</div><h3>Build &amp; test</h3><p>Short sprints with a live preview and regular updates along the way.</p></li>
+    <li><div class="big" aria-hidden="true">04</div><h3>Launch &amp; support</h3><p>Go-live, training, monitoring and ongoing support as you need it.</p></li>
   </ol>
 </section>
 
@@ -98,10 +99,10 @@
   <div class="wrap section">
     <h2>Why work with us</h2>
     <div class="grid grid-4 why">
-      <div><div class="num">01</div><h3>Talk directly to the developer</h3><p>No layers of project managers. The person writing your code is the one answering you.</p></div>
-      <div><div class="num">02</div><h3>Price and timeline up front</h3><p>A detailed quote after discovery, with clear milestones. No surprises.</p></div>
-      <div><div class="num">03</div><h3>You own the code</h3><p>Full access to the code and servers, proper documentation, and no vendor lock-in.</p></div>
-      <div><div class="num">04</div><h3>Support after launch</h3><p>Maintenance, backups, security and ongoing improvements – whatever your business needs.</p></div>
+      <div><div class="num" aria-hidden="true">01</div><h3>Talk directly to the developer</h3><p>No layers of project managers. The person writing your code is the one answering you.</p></div>
+      <div><div class="num" aria-hidden="true">02</div><h3>Price and timeline up front</h3><p>A detailed quote after discovery, with clear milestones. No surprises.</p></div>
+      <div><div class="num" aria-hidden="true">03</div><h3>You own the code</h3><p>Full access to the code and servers, proper documentation, and no vendor lock-in.</p></div>
+      <div><div class="num" aria-hidden="true">04</div><h3>Support after launch</h3><p>Maintenance, backups, security and ongoing improvements – whatever your business needs.</p></div>
     </div>
   </div>
 </section>
@@ -118,23 +119,24 @@
 <section id="contact" class="band">
   <div class="wrap section contact">
     <div class="contact-copy">
-      <h2 class="xl">Got an idea?<br>Let's build it.</h2>
+      <h2 class="xl" id="contactTitle">Got an idea?<br>Let's build it.</h2>
       <p class="sub">Tell us in a few words what you need, and we'll get back to you within 6 hours with an initial direction – no strings attached.</p>
       <div class="contact-links">
         <a href="mailto:blueecompile@gmail.com">blueecompile@gmail.com</a>
       </div>
     </div>
     <!-- TODO: connect to a form backend (e.g. Formspree / Web3Forms) by setting action="" -->
-    <form class="form" id="contactForm" action="#" method="post">
+    <form class="form" id="contactForm" action="#" method="post" aria-labelledby="contactTitle">
+      <p class="form-note">Fields marked <span class="req">*</span> are required.</p>
       <div class="row">
-        <label>Full name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Full name <span class="req" aria-hidden="true">*</span><input type="text" name="name" autocomplete="name" required></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
       </div>
-      <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      <label>Email <span class="req" aria-hidden="true">*</span><input type="email" name="email" autocomplete="email" required></label>
       <label>Tell us about your project<textarea name="message" rows="4"></textarea></label>
-      <label class="check"><input type="checkbox" name="consent" required>I agree to the <a href="#privacy">privacy policy</a></label>
-      <div class="status" id="formStatus" role="status" hidden>Thanks! We got your message and will be in touch soon.</div>
-      <button type="submit" class="btn btn-primary">Send →</button>
+      <label class="check"><input type="checkbox" name="consent" required><span>I agree to the <a href="privacy.html">privacy policy</a> <span class="req" aria-hidden="true">*</span></span></label>
+      <div class="status" id="formStatus" role="status" data-success="Thanks! We got your message and will be in touch soon."></div>
+      <button type="submit" class="btn btn-primary">Send <span aria-hidden="true">→</span></button>
     </form>
   </div>
 </section>
@@ -144,7 +146,7 @@
 <footer class="footer">
   <div class="wrap footer-inner">
     <span>© <span id="year">2026</span> Blue Compile. All rights reserved.</span>
-    <span class="footer-links"><a id="privacy" href="#privacy">Privacy policy</a><a href="#access">Accessibility statement</a></span>
+    <span class="footer-links"><a href="privacy.html">Privacy policy</a><a href="accessibility.html">Accessibility statement</a></span>
   </div>
 </footer>
 

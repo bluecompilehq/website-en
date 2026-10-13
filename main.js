@@ -10,7 +10,7 @@
     // Until a form backend is connected (set the form's action), show a local confirmation only.
     if (!form.getAttribute('action') || form.getAttribute('action') === '#') {
       e.preventDefault();
-      if (status) status.hidden = false;
+      if (status) status.textContent = status.getAttribute('data-success');
       form.reset();
     }
   });
