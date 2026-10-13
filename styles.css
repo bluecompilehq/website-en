@@ -42,7 +42,7 @@ h2.xl{font-weight:800;font-size:clamp(36px,5vw,50px);line-height:1.1}
 .hero-inner{position:relative}
 .nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
-.logo-mark{width:34px;height:34px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+.logo-mark{width:36px;height:36px;display:block;flex:none}
 .logo-text{font-family:Rubik,sans-serif;font-weight:700;font-size:21px}
 .logo-text span{color:var(--accent-light)}
 .nav-links{display:flex;flex-wrap:wrap;gap:28px;font-weight:500;font-size:16px}
