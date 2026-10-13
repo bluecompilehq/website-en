@@ -30,7 +30,7 @@ h2.xl{font-weight:800;font-size:clamp(36px,5vw,50px);line-height:1.1}
 .grid-2{grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:24px;margin-top:0}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;min-height:44px;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;border:none;cursor:pointer;font-family:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:#2148E0;color:#fff}
 .btn-ghost{border:1.5px solid #3A4A78;background:var(--band);color:#fff;font-weight:500}
