@@ -33,7 +33,12 @@
         return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.success; });
       })
       .then(function (ok) {
-        if (ok) { say('data-success'); form.reset(); } else { say('data-error', true); }
+        if (ok) {
+          say('data-success'); form.reset();
+          if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({ path: 'form-sent-' + location.host, title: 'Contact form sent', event: true });
+          }
+        } else { say('data-error', true); }
       })
       .catch(function () { say('data-error', true); })
       .then(function () { if (btn) btn.disabled = false; });
