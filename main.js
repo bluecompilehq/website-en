@@ -8,6 +8,18 @@
   if (!form) return;
   var btn = form.querySelector('button[type="submit"]');
 
+  // Analytics: note once when a visitor actually reaches the form
+  if ('IntersectionObserver' in window) {
+    var seen = false;
+    new IntersectionObserver(function (entries, obs) {
+      if (seen || !entries[0].isIntersecting) return;
+      seen = true; obs.disconnect();
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: 'form-seen-' + location.host + location.pathname, title: 'Form seen', event: true });
+      }
+    }, { threshold: 0.4 }).observe(form);
+  }
+
   function say(attr, isError) {
     if (!status) return;
     status.textContent = status.getAttribute(attr) || '';
