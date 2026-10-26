@@ -8,7 +8,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Heebo,sans-serif;font-size:17px;line-height:1.6}
-a{color:var(--text)}a:hover{color:var(--accent-light)}
+a{color:var(--text)}
 h1,h2,h3{font-family:Rubik,sans-serif;color:var(--white);margin:0}
 p{margin:0}
 img{max-width:100%}
@@ -32,7 +32,7 @@ h2.xl{font-weight:800;font-size:clamp(36px,5vw,50px);line-height:1.1}
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:#2148E0;color:#fff}
+
 .btn-ghost{border:1.5px solid #3A4A78;background:var(--band);color:#fff;font-weight:500}
 .btn-sm{padding:9px 22px;font-size:16px}
 
@@ -64,7 +64,7 @@ h2.xl{font-weight:800;font-size:clamp(36px,5vw,50px);line-height:1.1}
 
 /* cards */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
-.card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+
 .card h3{font-size:23px}
 .card p{color:var(--muted);font-size:16px}
 .num{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--accent-light)}
@@ -146,7 +146,7 @@ details p{margin-top:12px;color:var(--muted)}
 :focus-visible{outline:2px solid var(--accent-light);outline-offset:3px;border-radius:4px}
 .btn:focus-visible{border-radius:999px}
 .anim-toggle{position:absolute;inset-inline-end:24px;bottom:20px;z-index:2;min-height:44px;padding:8px 16px;border-radius:999px;border:1px solid var(--input-border);background:var(--band);color:var(--text);font:inherit;font-size:14px;cursor:pointer}
-.anim-toggle:hover{border-color:var(--accent-light)}
+
 .req{color:var(--accent-light)}
 .form-note{font-size:14px;color:var(--muted)}
 
@@ -172,8 +172,24 @@ details p{margin-top:12px;color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .card{transition:none}
+  .card,.btn{transition:none}
+  .btn:active{transform:none}
 }
 
 /* Minimum 24px target size for nav and footer links (WCAG 2.2 - 2.5.8) */
 .nav-links a,.footer-links a{display:inline-flex;align-items:center;min-height:24px;min-width:24px}
+
+/* Polish: hover only on devices with a real pointer, so effects do not stick after a tap */
+@media (hover:hover){
+  a:hover{color:var(--accent-light)}
+  .btn-primary:hover{background:#2148E0;color:#fff}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+  .anim-toggle:hover{border-color:var(--accent-light)}
+}
+/* Polish: smooth colour change and press feedback on buttons */
+.btn{transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .15s ease-out}
+.btn:active{transform:scale(.97)}
+@media (prefers-reduced-motion:reduce){
+  .btn{transition:none}
+  .btn:active{transform:none}
+}
