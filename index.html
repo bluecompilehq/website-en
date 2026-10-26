@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at 'sha256-ZF6asi5tMLktMOJkgpYoQeKQSBmZ2P6BsjSql/QqwnU='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://bluecompile.goatcounter.com; connect-src 'self' https://api.web3forms.com https://bluecompile.goatcounter.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blue Compile | Custom Software Development, Websites &amp; Business Systems</title>
 <meta name="description" content="Blue Compile is a software development studio with 20+ years of experience. Websites, landing pages, web apps and business systems built with .NET, Angular and React.">
@@ -238,11 +240,11 @@
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="form-note">Fields marked <span class="req">*</span> are required.</p>
       <div class="row">
-        <label><span>Full name <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" autocomplete="name" required></label>
-        <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel"></label>
+        <label><span>Full name <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" maxlength="100" autocomplete="name" required></label>
+        <label><span>Phone</span><input type="tel" name="phone" maxlength="30" autocomplete="tel"></label>
       </div>
-      <label><span>Email <span class="req" aria-hidden="true">*</span></span><input type="email" name="email" autocomplete="email" required></label>
-      <label><span>Tell us about your project</span><textarea name="message" rows="4"></textarea></label>
+      <label><span>Email <span class="req" aria-hidden="true">*</span></span><input type="email" name="email" maxlength="254" autocomplete="email" required></label>
+      <label><span>Tell us about your project</span><textarea name="message" maxlength="2000" rows="4"></textarea></label>
       <label class="check"><input type="checkbox" name="consent" required><span>I agree to the <a href="privacy.html">privacy policy</a> <span class="req" aria-hidden="true">*</span></span></label>
       <div class="status" id="formStatus" role="status" data-sending="Sending…" data-success="Thanks! We got your message and will be in touch soon." data-error="Something went wrong and your message wasn't sent. Please try again, or email us directly at blueecompile@gmail.com."></div>
       <button type="submit" class="btn btn-primary">Book my free call <span aria-hidden="true">→</span></button>

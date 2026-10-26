@@ -174,3 +174,6 @@ details p{margin-top:12px;color:var(--muted)}
   html{scroll-behavior:auto}
   .card{transition:none}
 }
+
+/* Minimum 24px target size for nav and footer links (WCAG 2.2 - 2.5.8) */
+.nav-links a,.footer-links a{display:inline-flex;align-items:center;min-height:24px;min-width:24px}
